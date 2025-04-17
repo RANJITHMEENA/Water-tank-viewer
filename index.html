@@ -138,19 +138,19 @@
 
             // Create blocks
             // if uncommnet to show walls of the tank
-            // heights.forEach((h, i) => {
-            //     if (h > 0) {  // Only draw walls (non-zero heights)
-            //         const x = (i + 1) * blockWidth;
-            //         const y = height - (h * scale) - 20;
-            //         const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            //         rect.setAttribute('x', x + 1); // Add 1px offset to show grid lines
-            //         rect.setAttribute('y', y + 1);
-            //         rect.setAttribute('width', blockWidth - 2); // Subtract 2px to show grid lines
-            //         rect.setAttribute('height', h * scale - 2);
-            //         rect.setAttribute('fill', '#FFFF'); // Yellow color for walls
-            //         svg.appendChild(rect);
-            //     }
-            // });
+            heights.forEach((h, i) => {
+                if (h > 0) {  // Only draw walls (non-zero heights)
+                    const x = (i + 1) * blockWidth;
+                    const y = height - (h * scale) - 20;
+                    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    rect.setAttribute('x', x + 1); // Add 1px offset to show grid lines
+                    rect.setAttribute('y', y + 1);
+                    rect.setAttribute('width', blockWidth - 2); // Subtract 2px to show grid lines
+                    rect.setAttribute('height', h * scale - 2);
+                    rect.setAttribute('fill', '#FFFF00'); // Yellow color for walls
+                    svg.appendChild(rect);
+                }
+            });
 
             // Calculate and visualize water
             let waterLevel = new Array(heights.length).fill(0);
